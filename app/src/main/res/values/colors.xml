@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--status bar-->
+    <color name="colorPrimaryDark">#333533</color>
+    <!--action bar-->
+    <color name="colorPrimary">#EFEDE7</color>
+    <!--put button-->
+    <color name="colorEmpty">#FFFFFF</color>
+    <!--shuffle button-->
+    <color name="colorPrimaryLight">#DDB739</color>
+    <!--view all-->
+    <color name="colorHighlight">#FFFFFF</color>
+    <!--save button-->
+    <color name="colorAccent">#DDB739</color>
+
+    <!--splash screen gradient-->
+    <color name="colorPrimaryLighter">#FFE07C</color>
+
+    <color name="black_overlay">#66000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="lightGrey">#d3d3d3</color>
+</resources>

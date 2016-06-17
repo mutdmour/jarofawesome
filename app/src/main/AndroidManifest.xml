@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="org.mutasem.jarofawesome">
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme.NoActionBar">
+        <activity
+            android:name=".MainMenuActivity"
+            android:label="@string/title_activity_main_menu"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name=".EntryWriterActivity"
+            android:label="@string/title_activity_entry_writer"
+            android:parentActivityName=".MainMenuActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity
+            android:name=".EntryReaderActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_entry_reader"
+            android:parentActivityName=".MainMenuActivity"
+            android:theme="@style/FullscreenTheme" />
+        <activity
+            android:name=".ViewAllActivity"
+            android:label="@string/title_activity_view_all"
+            android:parentActivityName=".MainMenuActivity"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="org.mutasem.jarofawesome.MainMenuActivity" />
+        </activity>
+        <activity android:name=".SplashScreenActivity"
+            android:screenOrientation="portrait"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+    </application>
+
+</manifest>

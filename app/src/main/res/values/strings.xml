@@ -1,0 +1,50 @@
+<resources>
+    <string name="app_name">Jar Of Awesome</string>
+    <string name="delete_all">Delete All</string>
+    <string name="action_settings">Settings</string>
+    <string name="feedback">Give feedback</string>
+    <string name="ratemyapp">Rate this app</string>
+
+    <!--feedback email-->
+    <string name="feedback_email_addr">mutdmour@gmail.com</string>
+    <string name="feedback_email_title">Feedback: Jar of Awesome</string>
+    <string name="feedback_email_body">Hi Jar of Awesome,</string>
+
+    <!--MainMenuActivity-->
+    <string name="title_activity_main_menu">Jar of Awesome</string>
+    <string name="get_random">Hold for Awesome</string>
+    <string name="save">Put \ninto\n Jar</string>
+    <string name="more_shaking">Shake it \n baby, \n don\'t stop!</string>
+    <string name="more_entries">Gotta have at least 3 Awesomes</string>
+    <string name="no_entries">Put something in the jar first</string>
+    <string name="view_all_button">View All \n Your Awesome</string>
+    <string name="main_menu_title">Jar of Awesome</string>
+
+    <!--EntryWriterAcitvity-->
+    <string name="title_activity_entry_writer"></string>
+    <string name="prompt">Tell me something Awesome</string>
+    <string name="saved_message">Saved</string>
+    <string name="no_input_message">Gotta input something</string>
+
+    <!--GetTitleFragment-->
+    <string name="set_title">Give it a title:</string>
+    <string name="title_hint">something awesome</string>
+
+    <!--EntryReaderActivity-->
+    <string name="title_activity_entry_reader"></string>
+    <string name="edit_entry">edit</string>
+    <string name="delete_entry">delete</string>
+
+    <!--ViewAllActivity-->
+    <string name="title_activity_view_all"></string>
+
+    <!--confirmDeleteFragment-->
+    <string name="delete_one_message">Sure you want to delte this?</string>
+    <string name="delete_all_message">Sure you want to delte everything?</string>
+    <string name="yes">yup</string>
+    <string name="no">maybe not</string>
+    <string name="deleted_one">:( gone</string>
+    <string name="deleted_all">:( all gone</string>
+    <string name="deleted_nothing">all good</string>
+
+</resources>

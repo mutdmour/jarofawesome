@@ -1,0 +1,21 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="15dp"
+        android:text="@string/set_title" />
+    <EditText
+        android:id="@+id/title_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/title_hint"
+        android:textColorHint="@color/lightGrey"
+        android:textColor="@color/colorPrimaryLight"
+        android:textSize="15dp"/>
+</LinearLayout>

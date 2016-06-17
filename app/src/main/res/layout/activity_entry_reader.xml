@@ -1,0 +1,35 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context="org.mutasem.jarofawesome.EntryReaderActivity"
+  >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/reader_layout"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/entry_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="top"
+            android:keepScreenOn="true"
+            android:textSize="30dp"
+            android:textColor="@color/black"
+            android:textAlignment="center"
+            android:scrollIndicators="right"
+            android:scrollbars = "vertical"
+            android:textStyle="bold"/>
+        <TextView
+            android:id="@+id/entry_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:keepScreenOn="true"
+            android:textSize="15dp"
+            android:textColor="@color/black"
+            android:scrollIndicators="right"
+            android:scrollbars = "vertical"/>
+    </LinearLayout>
+</FrameLayout>
