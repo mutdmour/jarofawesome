@@ -12,18 +12,26 @@
     tools:context="org.mutasem.jarofawesome.EntryWriterActivity"
     tools:showIn="@layout/activity_entry_writer"
     android:weightSum="1"
-    android:orientation="vertical">
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/prompt"
-        android:textSize="20dp"/>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/lined_edit_text"
-        android:orientation="vertical"
-        android:weightSum="1">
-    </LinearLayout>
+    android:orientation="vertical"
+    android:id="@+id/writer_layout">
+    <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:layout_weight=".8"-->
+        <!--android:weightSum="1"-->
+        <!--android:orientation="vertical">-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/prompt"
+            android:textSize="20dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/lined_edit_text"
+            android:orientation="vertical"
+            android:weightSum="1">
+        </LinearLayout>
+    <!--</LinearLayout>-->
 
 </LinearLayout>

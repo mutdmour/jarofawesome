@@ -62,7 +62,7 @@ public class EntryReaderActivity
                     View.SYSTEM_UI_FLAG_LOW_PROFILE
                     | View.SYSTEM_UI_FLAG_FULLSCREEN
                     | View.SYSTEM_UI_FLAG_LAYOUT_STABLE
-                    | View.SYSTEM_UI_FLAG_IMMERSIVE
+                    | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
                     | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
                     | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
         }
@@ -123,9 +123,9 @@ public class EntryReaderActivity
 
         /* setting texTview with text and scrolling */
         mTitleView = (TextView) findViewById(R.id.entry_title);
-        mTitleView.setText("\n" + entry.getTitle() + "\n");
+        mTitleView.setText(entry.getTitle());
         mContentView = (TextView) findViewById(R.id.entry_content);
-        mContentView.setText("\n"+entry.getContent()+"\n");
+        mContentView.setText(entry.getContent());
         mContentView.setMovementMethod(new ScrollingMovementMethod());
 
         /*is Action bar visible */
@@ -147,11 +147,17 @@ public class EntryReaderActivity
         // created, to briefly hint to the user that UI controls
         // are available.
         delayedHide(100);
+//        findViewById(
+//                R.id.entry_title)
+//                .setOnTouchListener(
+//                        mDelayHideTouchListener
+//                );
         findViewById(
-                R.id.entry_content
-                ).setOnTouchListener(
+                R.id.entry_content)
+                .setOnTouchListener(
                         mDelayHideTouchListener
                 );
+
     }
 
     @Override

@@ -36,8 +36,9 @@ import android.widget.Toast;
 
 public class MainMenuActivity
         extends AppCompatActivity
-        implements ConfirmDeleteFragment.ConfirmDeleteListener{
+    {
 
+    final private int hold = 100;
 //    private Button putButton;
     private Button shuffleButton;
     protected static EntryDb db;
@@ -47,8 +48,8 @@ public class MainMenuActivity
 //    private Shaker shaker;
 //    private SharedPreferences preferences;
     private Vibrator vibrator;
-    private FragmentManager fragmentManager;
-    private String FRAGMENT_TAG = "org.mutasem.jarofawesome.ShakeGifFragment";
+//    private FragmentManager fragmentManager;
+//    private String FRAGMENT_TAG = "org.mutasem.jarofawesome.ShakeGifFragment";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,7 +69,10 @@ public class MainMenuActivity
         titleTextView.setLayoutParams(lp);
         titleTextView.setGravity(Gravity.CENTER_VERTICAL);
         titleTextView.setTextSize(20);
-        titleTextView.setTextAppearance(R.style.mainMenuTitle);
+        titleTextView.setTextColor(
+                ContextCompat.getColor(getApplicationContext(), R.color.black)
+        );
+//        titleTextView.setTextAppearance(R.style.mainMenuTitle);
         toolbar.addView(titleTextView);
         setSupportActionBar(toolbar);
 
@@ -101,7 +105,7 @@ public class MainMenuActivity
                     if (vibrator.hasVibrator()){
                         vibrator.cancel();
                     }
-                    if (diff > 3000){
+                    if (diff > hold){
                         getRandom(null);
                     } else {
                         Snackbar.make(v,
@@ -223,9 +227,9 @@ public class MainMenuActivity
     @Override
     public boolean onOptionsItemSelected(MenuItem item){
         switch (item.getItemId()){
-            case R.id.delete_all:
-                DialogFragment dialog = new ConfirmDeleteFragment();
-                dialog.show(getSupportFragmentManager(),"ConfirmDeleteFragment");
+            case R.id.about:
+//                DialogFragment dialog = new ConfirmDeleteFragment();
+//                dialog.show(getSupportFragmentManager(),"ConfirmDeleteFragment");
                 return true;
             case R.id.feedback:
                 Intent i = new Intent(Intent.ACTION_SEND);
@@ -259,25 +263,5 @@ public class MainMenuActivity
         }
     }
 
-    @Override
-    public void onDialogPositiveClick(DialogFragment dialog) {
-        MainMenuActivity.db.deleteAll();
-        Snackbar.make(shuffleButton,
-                getString(R.string.deleted_all),
-                Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show();
-    }
 
-    @Override
-    public void onDialogNegativeClick(DialogFragment dialog) {
-        Snackbar.make(shuffleButton,
-                getString(R.string.deleted_nothing),
-                Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show();
-    }
-
-    @Override
-    public int setDeleteMessage() {
-        return R.string.delete_all_message;
-    }
 }

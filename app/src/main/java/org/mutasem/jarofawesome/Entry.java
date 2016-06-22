@@ -61,7 +61,7 @@ public class Entry implements Parcelable{
         return this.title;
     }
 
-    public void setTitle(String content){
+    public void setTitle(String title){
         this.title = title;
     }
 

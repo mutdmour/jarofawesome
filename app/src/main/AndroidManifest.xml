@@ -2,12 +2,16 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="org.mutasem.jarofawesome">
     <uses-permission android:name="android.permission.VIBRATE"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
+        <!--android:backupAgent="backUpAgent">-->
+        <!--<meta-data android:name="com.google.android.backup.api_key"-->
+            <!--android:value="AEdPqrEAAAAIKo7ltErwSfG7lra_D04f3QAgQPk_URTCupZ8AQ" />-->
         <activity
             android:name=".MainMenuActivity"
             android:label="@string/title_activity_main_menu"

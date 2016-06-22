@@ -8,7 +8,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="15dp"
+        android:textSize="20dp"
         android:text="@string/set_title" />
     <EditText
         android:id="@+id/title_input"
@@ -17,5 +17,7 @@
         android:hint="@string/title_hint"
         android:textColorHint="@color/lightGrey"
         android:textColor="@color/colorPrimaryLight"
-        android:textSize="15dp"/>
+        android:textSize="15dp"
+        android:singleLine="true"
+        />
 </LinearLayout>

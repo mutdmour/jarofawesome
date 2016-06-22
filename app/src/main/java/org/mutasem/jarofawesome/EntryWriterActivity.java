@@ -16,8 +16,10 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.AttributeSet;
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -60,6 +62,8 @@ public class EntryWriterActivity
         linedEditText.setLayoutParams(lp);
         linedEditText.setTextColor(ContextCompat.getColor(getApplicationContext(),R.color.black));
         linedEditText.setGravity(Gravity.TOP);
+        linedEditText.setTextSize(TypedValue.DENSITY_DEFAULT,getResources().getDimension(R.dimen.entry_content_size));
+        linedEditText.setWatcher();
         layout.addView(linedEditText);
         if (intent.hasExtra(EntryReaderActivity.extraEntry2Edit)){
             update = true;
@@ -72,12 +76,12 @@ public class EntryWriterActivity
         if (savedInstanceState != null){
             linedEditText.setText(savedInstanceState.getString(saved_content));
         }
-        tintView(linedEditText,
-                ContextCompat.getColor(
-                        getApplicationContext(),
-                        R.color.colorPrimaryLight
-                )
-        );
+//        tintView(linedEditText,
+//                ContextCompat.getColor(
+//                        getApplicationContext(),
+//                        R.color.colorPrimaryLight
+//                )
+//        );
 
         try {
             Field f = TextView.class.getDeclaredField("mCursorDrawableRes");
@@ -125,7 +129,7 @@ public class EntryWriterActivity
 
     public boolean saveInput(){
         String text = linedEditText.getText().toString();
-        if (text.length() > 0){
+        if (text.trim().length() > 0){
             DialogFragment dialog = new GetTitleFragment();
             dialog.show(getSupportFragmentManager(),"GetTitleFragment");
         } else {
@@ -154,15 +158,21 @@ public class EntryWriterActivity
     }
 
     @Override
-    public void onDialogPositiveClick(DialogFragment dialog, String title) {
-        if (title.length() > 0) {
-            if (update == true){
-                entry.setTitle(title);
-                MainMenuActivity.db.updateRow(entry);
-            } else {
-                MainMenuActivity.db.insertRow(linedEditText.getText().toString(), title);
+    public void onDialogPositiveClick(DialogFragment dialog, String newTitle) {
+//        Log.d("onDialogPositiveClick",newTitle);
+        if (newTitle != null) {
+            if (newTitle.trim().length() > 0) {
+                if (update == true) {
+                    entry.setTitle(newTitle);
+                    entry.setContent(linedEditText.getText().toString());
+                    MainMenuActivity.db.updateRow(entry);
+                    update = false;
+                    this.title = null;
+                } else {
+                    MainMenuActivity.db.insertRow(linedEditText.getText().toString(), newTitle);
+                }
+                linedEditText.setText("");
             }
-            linedEditText.setText("");
         } else {
             //dialog.show(getSupportFragmentManager(),"GetTitleFragment");
             //keep dialog open

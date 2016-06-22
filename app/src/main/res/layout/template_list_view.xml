@@ -11,9 +11,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/title_listView"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:maxLines="1"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/content_listView" />
+        android:id="@+id/content_listView"
+        android:maxLines="2"/>
 </LinearLayout>

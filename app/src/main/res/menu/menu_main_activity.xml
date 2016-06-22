@@ -2,13 +2,14 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <group>
         <item
+            android:id="@+id/about"
+            android:title="About this"
+            />
+        <item
             android:id="@+id/feedback"
             android:title="@string/feedback"/>
         <item
             android:id="@+id/ratemyapp"
             android:title="@string/ratemyapp"/>
-        <item
-            android:id="@+id/delete_all"
-            android:title="@string/delete_all" />
     </group>
 </menu>

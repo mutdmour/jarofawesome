@@ -9,6 +9,8 @@ import android.support.v4.app.DialogFragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.WindowManager;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 
 /**
@@ -16,13 +18,22 @@ import android.widget.EditText;
  */
 public class GetTitleFragment extends DialogFragment {
     public interface GetTitleListener {
-        public void onDialogPositiveClick(DialogFragment dialog, String title);
+        public void onDialogPositiveClick(DialogFragment dialog, String newTitle);
         public void onDialogNegativeClick(DialogFragment dialog);
         public String getOldTitle();
     }
 
-    GetTitleListener mListener;
-    View inflated;
+    private GetTitleListener mListener;
+    private View inflated;
+    private static String KEY_CURR_TITLE = "org.mutasem.jarofawesome.GetTitleFragment.currTitle";
+
+    public static GetTitleFragment newInstance(String title) {
+        GetTitleFragment frag = new GetTitleFragment();
+        Bundle args = new Bundle();
+        args.putString("title",title);
+        frag.setArguments(args);
+        return frag;
+    }
 
 
     @Override
@@ -46,15 +57,21 @@ public class GetTitleFragment extends DialogFragment {
 
         inflated = inflater.inflate(R.layout.fragment_title_get, null);
         EditText editText = (EditText) inflated.findViewById(R.id.title_input);
-        editText.setText(mListener.getOldTitle());
+        String currTitle = mListener.getOldTitle();
+        if (savedInstanceState != null){
+            currTitle = savedInstanceState.getString(KEY_CURR_TITLE);
+        }
+        editText.setText(currTitle);
         builder.setView(inflated)
                 .setPositiveButton(
                 R.string.yes,
                 new DialogInterface.OnClickListener(){
                     public void onClick(DialogInterface dialog, int id){
                         EditText editText = (EditText) inflated.findViewById(R.id.title_input);
-                        String title = editText.getText().toString();
-                        mListener.onDialogPositiveClick(GetTitleFragment.this, title);
+                        String newTitle = editText.getText().toString();
+                        Log.d("newTitle",newTitle);
+                        mListener.onDialogPositiveClick(GetTitleFragment.this, newTitle);
+                        editText.setText("");
                     }
                 }
         ).setNegativeButton(
@@ -65,7 +82,18 @@ public class GetTitleFragment extends DialogFragment {
                     }
                 }
         );
-        return builder.create();
+//        return builder.create();
+        Dialog d = builder.create();
+        d.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE);
+        return d;
     }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        EditText editText = (EditText) inflated.findViewById(R.id.title_input);
+        editText.requestFocus();
+    }
+
 
 }

@@ -25,6 +25,7 @@
     <string name="prompt">Tell me something Awesome</string>
     <string name="saved_message">Saved</string>
     <string name="no_input_message">Gotta input something</string>
+    <string name="too_much_text">Too much text</string>
 
     <!--GetTitleFragment-->
     <string name="set_title">Give it a title:</string>
