@@ -6,10 +6,13 @@ Jar of Awesome is an idea inspired by the Tim Ferriss podcast. The goal of the a
 
 ![](https://raw.githubusercontent.com/mutdmour/jarofawesome/master/screenshots/Screenshot_20160622-132116.png)
 ![](https://raw.githubusercontent.com/mutdmour/jarofawesome/master/screenshots/Screenshot_20160622-130519.png)
-\n
+
+
 ![](https://raw.githubusercontent.com/mutdmour/jarofawesome/master/screenshots/Screenshot_20160622-130920.png)
 ![](https://raw.githubusercontent.com/mutdmour/jarofawesome/master/screenshots/Screenshot_20160622-130927.png)
-\n
+
+
 ![](https://raw.githubusercontent.com/mutdmour/jarofawesome/master/screenshots/Screenshot_20160622-131120.png)
+
 ![](https://raw.githubusercontent.com/mutdmour/jarofawesome/master/screenshots/Screenshot_20160622-131218.png)
 ![](https://raw.githubusercontent.com/mutdmour/jarofawesome/master/screenshots/Screenshot_20160622-131322.png)
