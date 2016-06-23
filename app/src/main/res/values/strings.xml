@@ -12,7 +12,7 @@
 
     <!--MainMenuActivity-->
     <string name="title_activity_main_menu">Jar of Awesome</string>
-    <string name="get_random">Hold for Awesome</string>
+    <string name="get_random">Awesome at Random</string>
     <string name="save">Put \ninto\n Jar</string>
     <string name="more_shaking">Shake it \n baby, \n don\'t stop!</string>
     <string name="more_entries">Gotta have at least 3 Awesomes</string>

@@ -70,7 +70,7 @@ public class MainMenuActivity
         titleTextView.setGravity(Gravity.CENTER_VERTICAL);
         titleTextView.setTextSize(20);
         titleTextView.setTextColor(
-                ContextCompat.getColor(getApplicationContext(), R.color.black)
+                ContextCompat.getColor(getApplicationContext(), R.color.colorPrimaryLight)
         );
 //        titleTextView.setTextAppearance(R.style.mainMenuTitle);
         toolbar.addView(titleTextView);
@@ -90,10 +90,10 @@ public class MainMenuActivity
             public boolean onTouch(View v, MotionEvent event) {
                 if (event.getActionMasked() == MotionEvent.ACTION_DOWN){
 //                    fragmentManager.beginTransaction().add(R.id.mainMenuFrameLayout,fragment,FRAGMENT_TAG).commit();
-                    Snackbar.make(v,
-                            "Ya, hold me tight",
-                            Snackbar.LENGTH_LONG)
-                            .setAction("Action", null).show();
+//                    Snackbar.make(v,
+//                            "Ya, hold me tight",
+//                             Snackbar.LENGTH_LONG)
+//                            .setAction("Action", null).show();
                     if (vibrator.hasVibrator()){
                         long[] pattern = {0,5000};
                         vibrator.vibrate(pattern,0);
