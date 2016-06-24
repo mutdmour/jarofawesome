@@ -228,8 +228,8 @@ public class MainMenuActivity
     public boolean onOptionsItemSelected(MenuItem item){
         switch (item.getItemId()){
             case R.id.about:
-//                DialogFragment dialog = new ConfirmDeleteFragment();
-//                dialog.show(getSupportFragmentManager(),"ConfirmDeleteFragment");
+                DialogFragment dialog = new AboutDialog();
+                dialog.show(getSupportFragmentManager(),"AboutDialog");
                 return true;
             case R.id.feedback:
                 Intent i = new Intent(Intent.ACTION_SEND);

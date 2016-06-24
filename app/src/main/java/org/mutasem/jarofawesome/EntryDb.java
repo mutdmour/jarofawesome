@@ -40,7 +40,6 @@ public class EntryDb {
         ContentValues values = new ContentValues();
         values.put(EntryDbContract.Entry.COLUMN_NAME_ENTRY_CONTENT,content);
         values.put(EntryDbContract.Entry.COLUMN_NAME_ENTRY_TITLE,title);
-//        values.put(EntryDbContract.Entry.COLUMN_NAME_ENTRY_SHOWN, 0);
         values.put(EntryDbContract.Entry.COLUMN_NAME_ENTRY_DATE_ADDED, getDateTime());
         entryDb.insert(
                 EntryDbContract.Entry.TABLE_NAME,
@@ -149,6 +148,7 @@ public class EntryDb {
 //    }
 
     public Cursor getAll(String[] columns){
+        String orderBy = EntryDbContract.Entry.COLUMN_NAME_ENTRY_DATE_ADDED + " DESC";
         Cursor cursor = entryDb.query(
                 true,
                 EntryDbContract.Entry.TABLE_NAME,
@@ -157,7 +157,7 @@ public class EntryDb {
                 null,
                 null,
                 null,
-                null, //order
+                orderBy, //order
                 null, //limit
                 null
         );

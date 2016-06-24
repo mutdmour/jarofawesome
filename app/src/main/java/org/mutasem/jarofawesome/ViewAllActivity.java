@@ -124,6 +124,7 @@ public class ViewAllActivity extends AppCompatActivity
                 getString(R.string.deleted_all),
                 Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show();
+        finish();
     }
 
     @Override

@@ -3,7 +3,7 @@
     <group>
         <item
             android:id="@+id/about"
-            android:title="About this"
+            android:title="@string/about_menu_item"
             />
         <item
             android:id="@+id/feedback"
